@@ -47,7 +47,7 @@ class BackupFu
     end
 
     if !@db_conf[:password].blank? && @db_conf[:adapter] != 'postgresql'
-      password = "--password=#{@db_conf[:password]}"
+      password = "--password=\"#{@db_conf[:password]}\""
     end
 
     "#{host} #{port} #{user} #{password}"
